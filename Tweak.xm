@@ -1,3 +1,6 @@
+@interface GKBLabelWithBackgroundImage : UILabel
+@end
+
 %group MOD
 
 static BOOL keep = NO;
@@ -8,6 +11,13 @@ static BOOL keep = NO;
 }
 %end
 %hook GKBLabelWithBackgroundImage
+- (void)setFrame:(CGRect)arg1{
+	self.textColor = [UIColor blackColor];
+	%orig;
+}
+- (void)didMoveToWindow{
+	return ;
+}
 - (void)setTextColor:(id)arg1{
 	arg1 = [UIColor whiteColor];
 	%orig;
@@ -24,7 +34,7 @@ static BOOL keep = NO;
 %end
 %hook GKBKeyboardImpl
 - (void)keyboardViewHelper:(id)arg1 didCreateView:(id)arg2{
-	[arg2 setBackgroundColor:[UIColor colorWithWhite:90.0/255 alpha:1]];
+	[arg2 setBackgroundColor:[UIColor colorWithRed:.3f green:.3f blue:.3f alpha:.1f]];
 	%orig;
 }
 %end
