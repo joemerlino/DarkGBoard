@@ -1,0 +1,10 @@
+Package: com.joemerlino.darkgboard
+Name: DarkGboard
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Description: Turn your GBoard into a nice light black!
+Maintainer: Joe Merlino
+Author: Joe Merlino
+Section: Tweaks
+Version: 0.0.1-1
+Installed-Size: 120
